@@ -1,6 +1,8 @@
 import { Button } from "@material-ui/core";
 import Head from "next/head";
+import Image from "next/image";
 import styled from "styled-components";
+import logo from "../assets/loginScreen.png";
 import { auth, provider } from "../firebase";
 
 const Login = () => {
@@ -14,7 +16,9 @@ const Login = () => {
         <title>Login</title>
       </Head>
       <LoginContainer>
-        <Logo src="https://img-premium.flaticon.com/png/512/745/premium/745196.png?token=exp=1626088733~hmac=871d6fe0b7f1ed0878ef063f3bc0b0f3" />
+        <ImgContainer>
+          <Image src={logo} alt="logo" height={200} width={200} />
+        </ImgContainer>
         <Button onClick={signIn} variant="outlined">
           sign in with Google
         </Button>
@@ -42,8 +46,6 @@ const LoginContainer = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 4em;
 `;
-const Logo = styled.img`
-  height: 8em;
-  width: 8em;
-  margin-bottom: 2.5em;
+const ImgContainer = styled.div`
+  margin: 0 0 2.5em 0.5em;
 `;
